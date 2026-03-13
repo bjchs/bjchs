@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saint Joseph Jaipur School</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+
+body{
+color:#0b3d2e;
+background:linear-gradient(270deg,#e8f5e9,#c8e6c9,#a5d6a7,#e8f5e9);
+background-size:800% 800%;
+animation:gradientMove 18s ease infinite;
+scroll-behavior:smooth;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+.menu-btn{
+position:fixed;
+top:20px;
+left:20px;
+background:#064e3b;
+color:white;
+border:none;
+padding:10px 16px;
+font-size:18px;
+cursor:pointer;
+border-radius:6px;
+z-index:1200;
+}
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+height:100%;
+width:260px;
+background:#064e3b;
+padding-top:20px;
+transform:translateX(-260px);
+transition:0.4s;
+z-index:1000;
+}
+
+.sidebar.active{transform:translateX(0)}
+
+.logo-space{
+height:120px;
+margin:10px;
+border:2px dashed #ffffff88;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:14px;
+text-align:center;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:14px 25px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.sidebar a:hover{background:#0f766e}
+
+section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:60px 10%;
+}
+
+.content{width:100%}
+
+h1,h2{color:#064e3b;margin-bottom:20px;text-align:center}
+
+.card{
+background:white;
+padding:35px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+max-width:1000px;
+margin:auto;
+line-height:1.7;
+transition:0.3s;
+}
+
+.card:hover{transform:translateY(-6px)}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.4s;
+}
+
+.gallery img:hover{transform:scale(1.08)}
+
+/* IMAGE SLIDER */
+.slider{
+position:relative;
+max-width:1000px;
+margin:auto;
+overflow:hidden;
+border-radius:14px;
+}
+
+.slides{
+display:flex;
+transition:0.6s;
+}
+
+.slides img{
+width:100%;
+flex-shrink:0;
+}
+
+/* NOTICE BOARD */
+.notice-board{
+background:#f1f8f4;
+border-left:6px solid #064e3b;
+padding:20px;
+margin-top:20px;
+border-radius:10px;
+}
+
+.notice-board ul{
+padding-left:20px;
+}
+
+.notice-board li{margin:8px 0}
+
+/* EVENT CALENDAR */
+.calendar{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:20px;
+}
+
+.calendar div{
+background:#e8f5e9;
+padding:15px;
+border-radius:10px;
+text-align:center;
+font-weight:500;
+}
+
+form input,form textarea,form select{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+form button{
+margin-top:15px;
+padding:12px;
+border:none;
+background:#064e3b;
+color:white;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+form button:hover{background:#0f766e}
+
+footer{
+text-align:center;
+padding:30px;
+background:#064e3b;
+color:white;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:14px 18px;
+border-radius:50px;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+
+@media(max-width:768px){
+section{padding:80px 6%}
+.calendar{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+
+<div class="sidebar" id="sidebar">
+
+<div class="logo-space">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA..." style="max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;">
+</div>
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#principal">Principal</a>
+<a href="#director">Director</a>
+<a href="#sports">Sports</a>
+<a href="#admission">Admissions</a>
+<a href="#gallery">Gallery</a>
+<a href="#events">Events</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<div class="content">
+
+<section id="home">
+<div class="card">
+<h1>Welcome to Saint Joseph Jaipur School</h1>
+
+<div class="slider">
+<div class="slides" id="slides">
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+</div>
+</div>
+
+<p style="margin-top:20px">A place where young minds grow, dreams begin, and futures are shaped. Our school provides quality education for students from Nursery to Class IX.</p>
+
+<div class="notice-board">
+<h3>School Notice Board</h3>
+<ul>
+<li>Admissions open for 2026 session</li>
+<li>New session coming soon</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<div class="card">
+<h2>About Us</h2>
+<p>Saint Joseph Jaipur School is committed to quality education and holistic development for students from Nursery to Class IX. Our goal is to nurture discipline, creativity, and strong moral values.</p>
+</div>
+</section>
+
+<section id="principal">
+<div class="card">
+<h2>Principal's Message</h2>
+<p>Our institution is committed to providing quality education that nurtures academic excellence and moral values while building confidence and leadership in every student.</p>
+</div>
+</section>
+
+<section id="director">
+<div class="card">
+<h2>Director's Message</h2>
+<p>Education shapes the future of individuals and society. Our vision is to create a learning environment where students grow intellectually and socially.</p>
+</div>
+</section>
+
+<section id="sports">
+<div class="card">
+<h2>Sports</h2>
+<p>Sports activities help students develop teamwork, discipline, and leadership. Our school encourages active participation in physical activities.</p>
+</div>
+</section>
+
+<section id="admission">
+<div class="card">
+<h2>Admission Form</h2>
+<form>
+<h3>Student Details</h3>
+<input placeholder="Student Name">
+<input type="date">
+<select>
+<option>Select Class</option>
+<option>Nursery</option>
+<option>KG</option>
+<option>Class 1</option>
+<option>Class 2</option>
+<option>Class 3</option>
+<option>Class 4</option>
+<option>Class 5</option>
+<option>Class 6</option>
+<option>Class 7</option>
+<option>Class 8</option>
+<option>Class 9</option>
+</select>
+
+<h3>Aadhar Details</h3>
+<input placeholder="Aadhar Card Number">
+<label>Upload Aadhar Card Photocopy</label>
+<input type="file">
+
+<h3>Certificates</h3>
+<label>Birth Certificate</label>
+<input type="file">
+<label>Caste Certificate</label>
+<input type="file">
+
+<h3>Parent Details</h3>
+<input placeholder="Father Name">
+<input placeholder="Father Phone Number">
+<input placeholder="Father Occupation">
+<input placeholder="Mother Name">
+<input placeholder="Mother Phone Number">
+<input placeholder="Mother Occupation">
+<textarea placeholder="Parent Address"></textarea>
+<button>Submit Application</button>
+</form>
+</div>
+</section>
+
+<section id="gallery">
+<div class="card">
+<h2>Gallery</h2>
+<div class="grid gallery">
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+<img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b">
+</div>
+</div>
+</section>
+
+<section id="events">
+<div class="card">
+<h2>Events Calendar</h2>
+<div class="calendar">
+<div>Jan 26<br>Republic Day</div>
+<div>Feb 15<br>Science Exhibition</div>
+<div>Mar 10<br>Sports Day</div>
+<div>Aug 15<br>Independence Day</div>
+<div>Sep 05<br>Teachers Day</div>
+<div>Dec 20<br>Annual Day</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="card">
+<h2>Contact</h2>
+<p>Phone: 9602118565</p>
+<p>Address: 21 Dev Vihar Colony, Near Dhani Kumawatan, Muhana Mod, Sanganer, Jaipur (Rajasthan)</p>
+</div>
+</section>
+
+</div>
+
+<footer>
+© 2026 Saint Joseph Jaipur School
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919602118565" target="_blank">WhatsApp</a>
+
+<script>
+function toggleMenu(){
+ document.getElementById('sidebar').classList.toggle('active');
+}
+
+let index=0;
+const slides=document.getElementById("slides");
+setInterval(()=>{
+ index=(index+1)%3;
+ slides.style.transform=`translateX(-${index*100}%)`;
+},3000);
+</script>
+
+</body>
+</html>
